@@ -6,32 +6,31 @@ Credit work on the discipline "Internet programming languages" on Ruby Rails 7
 rails new music_forum --database=postgresql
 </p>
 
-<b>Создание базы данных</b>
+<b>Создание базы данных</b><br>
 bin/rails db:create
 
-<h3>Аудентификация с Devise</h3>
-<p>
+<h3>Aутентификация с Devise</h3>
 1. gem "devise"
 2. bundle install
 3. rails generate devise:install
 4. Добавить в config/environments/development.rb:
 <i>config.action_mailer.default_url_options = { :host => 'localhost:3000' }</i>
-</p>
 
-<b>Внимание!</b>
+<b>Внимание!</b><br>
 <i>
 Команда выполняется строго до генерации модели, иначе возникнет ошибка "NoMethodError: undefined method `devise'"
 В этом случае нужно:
 1. убрать строчку device_for в config/routes.rb
 2. удалить модель rails destroy devise User
 3. rails generate devise:install
-</i?
+</i>
 
 
-<b>Создание модели User и миграции для связи с бд</b>
+<b>Создание модели User и миграции для связи с бд</b><br>
+<p>
 rails generate devise User
 bundle exec rake db:migrate
-
+</p>
 
 
 
