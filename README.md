@@ -25,6 +25,8 @@ bin/rails db:create
 3. rails generate devise:install
 </i>
 
+<b>Генерация контроллера User и представления profile</b><br>
+rails g controller user profile
 
 <b>Создание модели User и миграции для связи с бд</b><br>
 <p>
@@ -32,5 +34,14 @@ rails generate devise User
 bundle exec rake db:migrate
 </p>
 
+<b>Создание ресурсов Review и Comment</b><br>
+<p>
+rails g resource review
+rails g resource comment
+</p>
 
-
+<b>Гем для форм</b><br>
+<p>
+gem 'simple_form'
+rails generate simple_form:install
+</p?
