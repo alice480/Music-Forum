@@ -7,7 +7,7 @@ class User < ApplicationRecord
           :rememberable,
           :validatable
 
-  validates :login, presence: true, length: { maximum: 15 }, unique: true
-  validates :email, presence: true, unique: true, format: { with: Devise.email_regexp }
-  validates :encrypted_password, presence: true, length: { minimum: 8 }, unique: true
+  validates :login, presence: true, length: { maximum: 15 }, uniqueness: { message: "User with such login already exist" }
+  validates :email, presence: true, format: { with: Devise.email_regexp }, uniqueness: { message: "User with such email already exist" }
+  validates :encrypted_password, presence: true, length: { minimum: 8 }, uniqueness: { message: "User with such pussword already exist" }
 end
