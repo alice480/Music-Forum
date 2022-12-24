@@ -73,6 +73,8 @@ GEM
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bulma-rails (0.9.4)
+      sassc (~> 2.0)
     capybara (3.38.0)
       addressable
       matrix
@@ -195,6 +197,8 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -247,6 +251,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bulma-rails (~> 0.9.4)
   capybara
   carrierwave
   debug

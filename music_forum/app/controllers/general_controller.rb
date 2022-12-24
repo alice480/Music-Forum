@@ -1,5 +1,6 @@
-class GeneralController < ApplicationController
+# frozen_string_literal: true
 
+class GeneralController < ApplicationController
   def home_page; end
 
   def profile

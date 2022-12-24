@@ -35,6 +35,8 @@ gem "carrierwave"
 
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 
+gem "bulma-rails", "~> 0.9.4"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

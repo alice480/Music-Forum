@@ -8,24 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
   </head>
 
   <body>
 
 
-      <div class="container-sm">
-        <% flash.each do |type, message| %>
-          <% if type == 'success' %>
-            <div class='alert alert-info'>
-                  <b><%= message %></b>
-              </div>
-          <% else %>
-            <div class='alert alert-danger'>
-                  <b><%= message %></b>
-              </div>
-          <% end %>
-        <% end %>
-    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </body>
