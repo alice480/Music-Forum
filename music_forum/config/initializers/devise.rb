@@ -14,11 +14,12 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '190933d69eca38559eaf980e05376016a7af706d2945cf84f9449d522a5eee320d22b3ddd6ba0ffb4834d2868c153ff817c9df270f7874c6db0459802afb8fda'
+  # config.secret_key = 'aa7de83427b97f0c8d4616d0abedd16a8da9a12961c067c4a36ab47a50cfa92ce2a5c489e42d59f00d50511075f78d24ee86c8d7c8ef3da466dd1e5f64a923f5'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
+  config.authentication_keys = [:login]
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -59,6 +60,8 @@ Devise.setup do |config|
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [:email]
+
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
@@ -126,7 +129,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '00b3730f42772e9ed22779d558e0a7cda50e2293ca3b94d3e22f2d434e6c7af6bb935ee594fa642c3b3c5d23429a9fde60981c85fca183ee04df6de6441a6ff8'
+  # config.pepper = '10ea361abcc9584cdddd2bb78c0f1f2caf4ed31f04031f7a8cbbd2f25aaa0376d5070711c862fd8cc1f7112406803b1c7a829042ce1c716f177f29573cb3193d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -178,7 +181,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -266,7 +269,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  config.sign_out_via = :get
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

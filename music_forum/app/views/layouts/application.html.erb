@@ -11,19 +11,22 @@
   </head>
 
   <body>
+
+
       <div class="container-sm">
         <% flash.each do |type, message| %>
           <% if type == 'success' %>
             <div class='alert alert-info'>
-              <b><%= message %></b>
-            </div>
+                  <b><%= message %></b>
+              </div>
           <% else %>
             <div class='alert alert-danger'>
-              <b><%= message %></b>
-            </div>
+                  <b><%= message %></b>
+              </div>
           <% end %>
         <% end %>
-      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
