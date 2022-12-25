@@ -1,0 +1,17 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="form-outline mb-4">
+      <%= f.label :'Логин', class: "form-label", for: "form3Example97" %>
+      <%= f.text_field :login, autofocus: true, autocomplete: "email", id: "form3Example97", class: "form-control form-control-lg" %>
+  </div>
+
+  <div class="field">
+      <%= f.label :'Пароль', class: "form-label", for: "form3Example97" %>
+      <%= f.password_field :password, autocomplete: "new-password", id: "form3Example97", class: "form-control form-control-lg" %>
+  </div>
+
+  <div class="d-flex justify-content-end pt-3">
+    <%= f.submit "Log in", class: "btn btn-warning btn-lg ms-2"%>
+  </div>
+
+<% end %>

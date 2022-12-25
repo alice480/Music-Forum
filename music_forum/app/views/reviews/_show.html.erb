@@ -1,0 +1,9 @@
+<% @reviews = Review.all.order('created_at desc') %>
+<% @reviews.each do |review| %>
+
+     <%= image_tag(User.find_by(id: review.user_id).avatar_thumbnail, class: 'rounded-circle') %>
+    <h1>Тема: <%= review.topic %><br>
+    <p>Автор: <%= User.find_by(id: review.user_id)[:login] %><br>
+    <p>Текст: <%= review.text %><br>
+
+<% end %>

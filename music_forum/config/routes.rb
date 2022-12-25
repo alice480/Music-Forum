@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   get 'general/profile'
   get '/profile', to: 'general#profile'
+  get '/users', to: 'general#home_page'
+
+  get '/reviews/new', to: 'review#new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -45,11 +45,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_24_012653) do
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "reviews_id"
+    t.string "text"
+    t.index ["reviews_id"], name: "index_comments_on_reviews_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "topic"
+    t.string "text"
+    t.bigint "users_id"
+    t.integer "likes"
+    t.index ["users_id"], name: "index_reviews_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|

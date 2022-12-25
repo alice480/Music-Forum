@@ -1,0 +1,25 @@
+ <%= form_for(@review) do |f| %>
+
+  <div class="form-group">
+    <div class="control">
+      <%= f.label :Тема %><br>
+      <%= f.text_field :topic, required: true%><br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="control">
+      <%= f.label :Текст %> <br>
+        <%= f.text_area :text, required: true, class: "form-control", id: "exampleFormControlTextarea1", rows: "10"%>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <div class="control">
+      <%= f.submit 'Save' %>
+    </div>
+  </div>
+
+
+<% end %>
+

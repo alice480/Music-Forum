@@ -1,17 +1,35 @@
-<div class="pb-8">
-    <% if user_signed_in? %>
-        <span>Здравствуйте, <%= current_user.login %></span>
-        <%# <%= link_to 'Личный кабинет','general/profile' %>
-        
-        <%= link_to 'Личный кабинет', edit_user_registration_path %>
-        <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-    <% else %>
-        <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-    <% end %>
-</div>
+<nav class="navbar" style="background-color: #ffb841;">
 
- <div class="field">
-    <% if current_user %>
-        <%= image_tag(current_user.avatar_thumbnail) %>
+    <% if user_signed_in? %>
+
+        <span class="navbar-text">
+            Здравствуйте, <%= current_user.name %>
+        </span>
+
+        <div style="padding-right: 30px;">
+            <form class="form-inline">
+                <a href =  <%= '/reviews/new' %> class="badge badge-light">Обсуждение</a>
+            
+                <a href =  <%= edit_user_registration_path %> class="badge badge-light">Личный кабинет</a>
+                
+                <a href =  <%= destroy_user_session_path %> class="badge badge-light">Выйти</a>
+                
+            </form>
+        </div>
+
+    <% else %>
+                
+        <div class="col align-self-start">
+            <%= link_to 'Войти', new_user_session_path %>
+        </div>
+
+        <div class="col align-self-start"> 
+            <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+        </div>
+
     <% end %>
-</div>
+    
+
+</nav>
+
+<%= render 'reviews/show' %>
