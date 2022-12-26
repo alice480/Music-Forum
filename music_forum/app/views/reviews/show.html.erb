@@ -1,1 +1,7 @@
-<h1>Хай</h1>
+<% review = Review.find_by(id: params[:id]) %>
+<h1>Тема</h1>
+<%= review.topic %>
+
+<h1>Текст</h1>
+<%= review.text %>
+
