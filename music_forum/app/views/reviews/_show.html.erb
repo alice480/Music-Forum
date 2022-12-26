@@ -1,9 +1,37 @@
-<% @reviews = Review.all.order('created_at desc') %>
-<% @reviews.each do |review| %>
+<br>
+<br>
+<div class="container">   
+    <div class="row">
+        <div class="offset-md-2" style="max-width: 800px;">
+            <% @reviews = Review.all.order('created_at desc') %>
+            <% @reviews.each do |review| %>
 
-     <%= image_tag(User.find_by(id: review.user_id).avatar_thumbnail, class: 'rounded-circle') %>
-    <h1>Тема: <%= review.topic %><br>
-    <p>Автор: <%= User.find_by(id: review.user_id)[:login] %><br>
-    <p>Текст: <%= review.text %><br>
+                <div class="card mb-2" style="max-width: 1000px;">
+                    <div class="row g-1">
+                     <% if User.find_by(id: review.user_id) %>
+                        <div class="col-md-2">
+                            <br>
+                            <%= image_tag(User.find_by(id: review.user_id).avatar_thumbnail, height: "100") %>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <%= link_to review.topic, [review] %>
+                                <p class="card-text"> <%= User.find_by(id: review.user_id)[:login] %> </p>
+                                
+                                <% if 150 < review.text.length %>
+                                    <p class="card-text"><small class="text-muted"><%= review.text[0..130] + '...' %></small></p>
+                                <% else %>
+                                    <p class="card-text"><small class="text-muted"><%= review.text %></small></p>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
 
-<% end %>
+
+

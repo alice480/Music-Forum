@@ -14,4 +14,16 @@
     <%= f.submit "Log in", class: "btn btn-warning btn-lg ms-2"%>
   </div>
 
+  <div class="d-flex justify-content-end pt-3">
+    Нет аккаунта?
+  </div>
+
+  <div class="d-flex justify-content-end pt-3">
+    <%= link_to 'Зарегистрироваться', 'sign_up'%>
+  </div>
+
+  <div class="d-flex justify-content-end pt-3">
+    <%= link_to "На главную", '/general/home_page' %>
+  </div>
+  
 <% end %>
