@@ -9,9 +9,11 @@
                 alt="Logo"
                 loading="lazy"
             />
-            <span class="navbar-text fs-4">
-               <b>МузОбзор</b>
-            </span>
+
+            <span class="ml3">Музобзор</span>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
         </div> 
    
         <div class="d-flex align-items-center">
@@ -19,7 +21,7 @@
                 <% if user_signed_in? %>
 
                         <span class="navbar-text fs-5">
-                            Здравствуйте, <%= current_user.name %>
+                            <%= t 'hello'%> <%= current_user.name %>
                         </span>
 
                         <img
@@ -29,7 +31,7 @@
                             alt="Black and White Portrait of a Man"
                             loading="lazy"/>
 
-                        <a href =  <%= '/reviews/new' %> class="badge badge-light"><span class="fs-5">Обсуждение</span></a>
+                        <a href =  <%= '/reviews/new' %> class="badge badge-light"><span class="fs-5"><%= t 'discussion' %></span></a>
                         
                         <img
                             src='https://cdn-icons-png.flaticon.com/512/2095/2095113.png'
@@ -38,7 +40,7 @@
                             alt="Black and White Portrait of a Man"
                             loading="lazy"/>
 
-                        <a href = <%= edit_user_registration_path %> class="badge badge-light"><span class="fs-5">Профиль</span></a>
+                        <a href = <%= edit_user_registration_path %> class="badge badge-light" id="profile"><span class="fs-5"><%= t'lk'%></span></a>
 
                         <img
                             src='https://cdn-icons-png.flaticon.com/512/2095/2095113.png'
@@ -47,7 +49,9 @@
                             alt="Black and White Portrait of a Man"
                             loading="lazy"/>
 
-                        <a href =  <%= destroy_user_session_path %> class="badge badge-light"><span class="fs-5">Выйти</span></a>
+                        <a href =  <%= destroy_user_session_path %> class="badge badge-light" id="exit">
+                            <span class="fs-5"><%= t'exit'%></span>
+                        </a>
 
                         <img
                             src='https://cdn-icons-png.flaticon.com/512/2095/2095113.png'
@@ -66,9 +70,13 @@
                         
                 <% else %>
                         
-                        <a href =  <%= new_user_session_path %> class="badge badge-light"><span class="fs-5">Войти</span></a>
+                        <a href =  <%= new_user_session_path %> class="badge badge-light" id="enter">
+                            <span class="fs-5"><%= t'entry'%></span>
+                        </a>
 
-                        <a href =  <%= new_user_registration_path %> class="badge badge-light"><span class="fs-5">Зарегистрироваться</span></a>
+                        <a href =  <%= new_user_registration_path %> class="badge badge-light" id="signup">
+                            <span class="fs-5"><%= t'sign up' %></span>
+                        </a>
 
                 <% end %>
         
@@ -76,6 +84,128 @@
     </div>
 </nav>
 
-<%= render 'reviews/show' %>
+<div class="row">
+    <div class="col">
+        <br><br>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-9">
+
+                    <div>
+                        <% unless current_user.nil? %>
+                        <% user = UserCheck.new %>
+                            <% if user.check(current_user.login) %>
+
+                                <%= render 'admins/update1' %>
+                                <br>
+                            <% end %>
+                        <% end %>
+                    </div>
+
+                    <div class="card px-3 pt-3" style="max-width: 32rem">
+                        <!-- News block -->
+                        <div>
+
+                            <% @data = Admin.new.receive(3) %>
+                            <!-- Featured image -->
+                            <a href="" class="text-dark">
+                            <h5><%= t 'news' %></h5>
+
+                            <div class="bg-image hover-overlay shadow-1-strong ripple rounded-5 mb-4" data-mdb-ripple-color="light">
+                            <img src= <%= @data[2] %> width="350" height="200" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                            </div>
+
+                            <!-- Article title and description -->
+                            <a href="" class="text-dark">
+                            <h5><%= @data[0] %></h5>
+
+                            <p>
+                                <%= @data[1] %>
+                            </p>
+                            </a>
+
+                            <hr />
+                            
+                        </div>
+                        <!-- News block -->
+                    </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-auto">
+      <%= render 'reviews/show' %>
+    </div>
+
+    <div class="col">
+        <br><br>
+        <div class="row">
+
+            <div class="col-1">
+            </div>
+            <div class="col-9">
+
+                    <div>
+                        <% unless current_user.nil? %>
+                        <% user = UserCheck.new %>
+                            <% if user.check(current_user.login) %>
+
+                                <%= render 'admins/update2' %>
+                                <br>
+                            <% end %>
+                        <% end %>
+                    </div>
+
+                    <div class="card px-3 pt-3" style="max-width: 32rem">
+                        <!-- News block -->
+                        <div>
+
+                            <% @data = Admin.new.receive(4) %>
+                            <!-- Featured image -->
+                            <a href="" class="text-dark">
+                            <h5><%= t 'news' %></h5>
+
+                            <div class="bg-image hover-overlay shadow-1-strong ripple rounded-5 mb-4" data-mdb-ripple-color="light">
+                            <img src= <%= @data[2] %> width="350" height="200" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                            </div>
+
+                            <!-- Article title and description -->
+                            <a href="" class="text-dark">
+                            <h5><%= @data[0] %></h5>
+
+                            <p>
+                                <%= @data[1] %>
+                            </p>
+                            </a>
+
+                            <hr />
+                            
+                        </div>
+                        <!-- News block -->
+                    </div>
+
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    
+  </div>
+
+
+
+
+
+
 
 

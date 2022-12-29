@@ -2,7 +2,7 @@
 <br>
 <div class="container">   
     <div class="row">
-        <div class="offset-md-2" style="max-width: 800px;">
+        <div class="offset-md-0" style="max-width: 800px;">
             <% @reviews = Review.all.order('created_at desc') %>
             <% @reviews.each do |review| %>
 
@@ -32,6 +32,7 @@
         </div>
     </div>
 </div>
+
 
 
 

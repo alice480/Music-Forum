@@ -1,0 +1,42 @@
+ru:
+  sign up: "Зарегистрироваться"
+  activerecord:
+    attributes:
+      user:
+        name: "Имя"
+        surname: "Фамилия"
+        password: "Пароль"
+        login: "Логин"
+        email: "Почта"
+        encrypted_password: "Зашифрованный пароль"
+  new discussion: "Новое обсуждение"
+  log in to comment: "Войдите, чтобы оставить комменатрий"
+  hello: "Здравствуйте,"
+  discussion: "Обсуждение"
+  entry: "Войти"
+  forms:
+    submit:
+      update: "Обновить"
+  sign out: "Регистрация"
+  news: "Новости"
+  profile: "Мой профиль"
+  password_confirmation: "Подтверждение пароля"
+  topic: "Тема"
+  text: "Текст"
+  path: "Путь"
+  update: "Обновить"
+  save: "Сохранить"
+  on_general: "На главную"
+  email: "Почта"
+  input password to confirm: "(Введите пароль для подтверждения)"
+  pass if dont want to change: "(Пропустите поле, если не хотите менять пароль)"
+  symbols minimum: "символов минимум"
+  current password: "Текущий пароль"
+  back: "Назад"
+  comment: "Комментарий"
+  login: "Логин"
+  password: "Пароль"
+  lk: "Профиль"
+  exit: "Выйти"
+  already have an account: 'Already have an account?'
+  sign_in: 'Войти'

@@ -2,22 +2,27 @@
 
   <div class="form-group">
     <div class="control">
-      <%= f.label :Тема %><br>
-      <%= f.text_field :topic, required: true%><br>
+      <%= f.label t('topic'), class: "form-label", for: "form3Example97" %><br>
+      <%= f.text_field :topic, required: true, class: "form-control form-control-lg" %><br>
     </div>
   </div>
 
   <div class="form-group">
     <div class="control">
-      <%= f.label :Текст %> <br>
+      <%= f.label t('text'), class: "form-label", for: "form3Example97" %> <br>
         <%= f.text_area :text, required: true, class: "form-control", id: "exampleFormControlTextarea1", rows: "10"%>
     </div>
   </div>
   <br>
   <div class="form-group">
-    <div class="control">
-      <%= f.submit 'Save' %>
+    <div class="d-flex justify-content-end pt-3">
+      <%= f.submit t('save') %>
     </div>
+
+    <div class="d-flex justify-content-end pt-3">
+      <%= link_to t('on_general'), '/general/home_page' %>
+    </div>
+
   </div>
 
 

@@ -1,23 +1,44 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
- 
+<section class="h-110 bg-dark">
+  <div class="container py-5 h-110">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block"> 
+              <p></p>
+              <img src="https://img.freepik.com/premium-photo/rear-view-of-a-cheering-crowd-at-a-music-concert-this-concert-was-created-for-the-sole-purpose-of-this-photo-shoot-featuring-300-models-and-3-live-bands-all-people-in-this-shoot-are-model-released_590464-9301.jpg?w=740"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" 
+                height="100" />
+                <p></p>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
 
-<div class="d-flex justify-content-center">
 
-  <div class="d-flex flex-column">
+                        <div class="d-flex justify-content-center">
 
-    <div class="p-2">
-      <h1 class="title is-size-3 text-center">Новое обсуждение</h1>
+                            <div class="d-flex flex-column">
+
+                              <div class="p-2">
+                                <h1 class="title is-size-3 text-center"><%= t 'new discussion' %></h1>
+                              </div>
+
+                              <div class="p-2">
+                                <%= render 'form', review: @review %>
+                              </div>
+
+                            </div>
+
+                          </div> 
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="p-2">
-      <%= render 'form', review: @review %>
-    </div>
-
-    <div class="p-2">
-      <%= link_to "Back", '/' %>
-    </div>
-
   </div>
-
-</div>  
+</section>

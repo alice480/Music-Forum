@@ -10,15 +10,15 @@ class User < ApplicationRecord
 
   validates :login,
             presence: true,
-            length: { maximum: 15, message: 'Максимальная длина логина: 15 символов' },
-            uniqueness: { message: 'Логин занят' }
+            length: { maximum: 15 },
+            uniqueness: { message: 'занят' }
   validates :email,
             presence: true,
             format: { with: Devise.email_regexp },
-            uniqueness: { message: 'Email занят' }
+            uniqueness: {}
   validates :encrypted_password,
             presence: true,
-            length: { minimum: 8, message: 'Минимальная длина пароля: 8 символов' }
+            length: { minimum: 8 }
 
   has_one_attached :avatar
   after_commit :add_default_avatar, on: %i[create update]

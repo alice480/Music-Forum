@@ -16,7 +16,10 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show; end
+
+  def show
+    @comment = Comment.new
+  end
 
   def update;
     create

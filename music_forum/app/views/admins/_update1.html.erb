@@ -1,0 +1,16 @@
+<% @admin = Admin.new %>
+
+<%= form_for(:admin, url: '/admins/update1') do |f| %>
+    <br>
+    <%= f.label t('topic'), class: "form-label", for: "form3Example97" %>
+    <%= f.text_field :topic, autofocus: true, class: "form-control form-control-lg" %>
+    <br>
+    <%= f.label t('text'), class: "form-label", for: "form3Example97" %>
+    <%= f.text_field :text, autofocus: true, class: "form-control form-control-lg" %>
+    <br>
+    <%= f.label t('path'), class: "form-label", for: "form3Example97" %>
+    <%= f.text_field :path, autofocus: true, class: "form-control form-control-lg" %>
+    <br>
+    <%= f.submit t('update'), class: "btn btn-warning btn-lg ms-2"%>
+
+<% end %>

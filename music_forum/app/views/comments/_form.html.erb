@@ -1,0 +1,15 @@
+<%= form_for([@review, @review.comments.build]) do |f| %>
+
+    <div class="d-flex flex-start w-100">
+      <div class="form-outline w-100">
+          <%= f.text_area :text, required: true, class: "form-control", id: "textAreaExample", rows: "4", style: "background: #fff;"%>
+          <%= f.label t('comment'), class: "form-label", for: "textAreaExample"%>
+      </div>
+    </div>
+
+    <div class="float-end mt-2 pt-1">
+      <div class="control">
+        <%= f.submit 'Отправить', class: "btn btn-primary btn-sm"%>
+    </div>
+
+  <% end %>
